@@ -8,8 +8,8 @@ const DanhSach = () => {
   const searchKeyword = useSelector ((state) => state.student.searchKeyword)
   const filteredStudent = students.filter((sv) =>
   sv.name.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-  sv.id.includes(searchKeyword) ||
-  sv.phone.includes(searchKeyword) ||
+  String(sv.id).includes(searchKeyword) ||
+  String(sv.phone).includes(searchKeyword) ||
   sv.email.toLowerCase().includes(searchKeyword.toLowerCase())
 );
   return (
